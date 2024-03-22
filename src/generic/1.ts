@@ -1,12 +1,13 @@
-function getPromise<T extends any[]>(type: T) {
-  return new Promise<T>((resolve) => {
-    resolve(type);
+function getPromise(): Promise<(string | number)[]> {
+  return new Promise((resolve) => {
+    resolve(['Text', 50]);
   });
 }
 
-getPromise(['Text', 50])
+getPromise()
   .then((data) => {
     console.log(data); 
   });
 
 export {};
+
